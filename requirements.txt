@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+python-multipart
+dnspython
+dkimpy
+pyspf
+pandas
+numpy
+scikit-learn
+joblib
+beautifulsoup4

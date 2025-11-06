@@ -20,6 +20,7 @@ def check_spf(sender_ip: Optional[str], envelope_from: Optional[str], helo: Opti
     Uses pyspf.check2 which returns (result, explanation)
     result: 'pass', 'fail', 'softfail', 'neutral', etc.
     """
+    
     if not sender_ip or not envelope_from:
         return {"spf_result": "none", "spf_explain": "missing sender_ip or envelope_from"}
     try:

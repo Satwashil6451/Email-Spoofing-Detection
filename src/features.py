@@ -48,5 +48,4 @@ def extract_simple_features(parsed_email: Dict[str, Any], protocol_checks: Dict[
     # header mismatches
     feats["from_vs_returnpath_mismatch"] = (feats["from_domain"] != feats["return_path_domain"]) and bool(feats["return_path_domain"])
     feats["messageid_vs_from_mismatch"] = (feats["message_id_domain"] != feats["from_domain"]) and bool(feats["message_id_domain"])
-
     return feats

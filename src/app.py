@@ -187,6 +187,5 @@ async def detect_spoofing(file: UploadFile = File(...),
         }
 
         return JSONResponse({"verdict": "spoof" if is_spoof else "legit", "detail": detail})
-
     except Exception as e:
         return JSONResponse({"error": str(e)})

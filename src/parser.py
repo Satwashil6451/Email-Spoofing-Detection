@@ -59,6 +59,7 @@ def parse_email(raw_bytes: bytes) -> Dict[str, Any]:
         'attachments': [{'filename', 'content_type', 'size'}]
       }
     """
+    
     msg = message_from_bytes(raw_bytes, policy=policy.default)
     headers = dict(msg.items())
     subj = headers.get("Subject", "")

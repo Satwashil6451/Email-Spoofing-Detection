@@ -8,6 +8,7 @@ def check_dkim(raw_bytes: bytes) -> Dict[str, object]:
     """
     Returns {'dkim_valid': bool, 'error': str|None}
     """
+    
     try:
         valid = dkim.verify(raw_bytes)
         return {"dkim_valid": bool(valid), "error": None}

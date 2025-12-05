@@ -24,6 +24,7 @@ def check_spf(sender_ip: Optional[str], envelope_from: Optional[str], helo: Opti
     
     if not sender_ip or not envelope_from:
         return {"spf_result": "none", "spf_explain": "missing sender_ip or envelope_from"}
+        
     try:
         res = spf.check2(i=sender_ip, s=envelope_from, h=helo or envelope_from)
         # spf.check2 returns a tuple (result, explanation)

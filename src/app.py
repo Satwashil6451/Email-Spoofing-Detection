@@ -30,6 +30,7 @@ def safe_check_dkim(raw_email: bytes) -> dict:
     dkim.verify returns True/False if signature present; if no signature, dkim.verify() raises.
     We handle exceptions and report 'none' when no signature is present.
     """
+
     try:
         valid = dkim.verify(raw_email)
         return {"status": "pass" if valid else "fail", "detail": None}

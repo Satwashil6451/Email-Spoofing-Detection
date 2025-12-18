@@ -1,4 +1,5 @@
 # src/protocol_checks.py
+
 import dkim
 import spf
 import dns.resolver

@@ -1,4 +1,5 @@
 # src/parser.py
+
 from email import policy
 from email import message_from_bytes
 from email.utils import parseaddr

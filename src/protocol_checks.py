@@ -45,6 +45,7 @@ def get_dmarc(domain: str) -> Dict[str, Optional[str]]:
         txts = []
         for r in answers:
             # r.strings may be list of bytes or str
+
             if hasattr(r, "strings"):
                 joined = b"".join(r.strings).decode(errors="ignore") if isinstance(r.strings[0], (bytes, bytearray)) else "".join(r.strings)
             else:

@@ -50,6 +50,7 @@ def safe_check_spf(sender_ip: Optional[str], envelope_from: Optional[str], helo:
     Uses pyspf.check2 if sender_ip and envelope_from provided.
     Returns {'status': 'pass'|'fail'|'softfail'|'neutral'|'none'|'error', 'detail': ...}
     """
+  
     if not sender_ip or not envelope_from:
         return {"status": "none", "detail": "missing sender_ip or envelope_from for SPF check"}
     try:

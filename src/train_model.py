@@ -1,4 +1,5 @@
 # src/train_model.py
+
 """
 Optional: train a sklearn model if you have a features CSV.
 This expects a CSV with columns matching features returned by extract_simple_features

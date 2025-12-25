@@ -8,6 +8,7 @@ and a 'label' column with values 'spoof' or 'legit'.
 Example usage (after you prepare features.csv):
     python -m src.train_model
 """
+
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split

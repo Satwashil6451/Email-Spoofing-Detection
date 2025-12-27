@@ -52,6 +52,7 @@ def get_dmarc(domain: str) -> Dict[str, Optional[str]]:
                 joined = str(r)
             txts.append(joined)
         txt = " ".join(txts)
+        
         # try to find p=...
         policy = None
         if "p=" in txt:

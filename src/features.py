@@ -13,6 +13,7 @@ def domain_of_url(url: str) -> str:
         return p.netloc.lower().strip()
     except Exception:
         return ""
+        
 def extract_simple_features(parsed_email: Dict[str, Any], protocol_checks: Dict[str, Any]) -> Dict[str, Any]:
     feats = {}
     feats["from_domain"] = parsed_email.get("from_domain", "")

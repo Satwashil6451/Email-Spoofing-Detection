@@ -1,4 +1,5 @@
 # src/detector.py
+
 from .parser import parse_email
 from .protocol_checks import check_dkim, check_spf, get_dmarc
 from .features import extract_simple_features

@@ -24,7 +24,7 @@ def extract_simple_features(parsed_email: Dict[str, Any], protocol_checks: Dict[
     feats["text_len"] = len(parsed_email.get("text", "") or "")
     feats["html_len"] = len(parsed_email.get("html", "") or "")
     
-# payload ratio
+    # payload ratio
 
     feats["html_to_text_ratio"] = (feats["html_len"] / (feats["text_len"]+1)) if feats["text_len"] >= 0 else 0.0
 

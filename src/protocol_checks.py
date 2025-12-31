@@ -17,6 +17,7 @@ def check_dkim(raw_bytes: bytes) -> Dict[str, object]:
         return {"dkim_valid": False, "error": str(e)}
 
 def check_spf(sender_ip: Optional[str], envelope_from: Optional[str], helo: Optional[str]) -> Dict[str, object]:
+    
     """
     Requires sending IP (sender_ip) and envelope-from (MAIL FROM).
     Uses pyspf.check2 which returns (result, explanation)

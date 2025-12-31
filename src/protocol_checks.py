@@ -36,6 +36,7 @@ def check_spf(sender_ip: Optional[str], envelope_from: Optional[str], helo: Opti
         return {"spf_result": "error", "spf_explain": str(e)}
 
 def get_dmarc(domain: str) -> Dict[str, Optional[str]]:
+    
     """
     Query _dmarc.domain TXT record. Returns {'dmarc': txt or None, 'policy': 'none'|'quarantine'|'reject'|None}
     """

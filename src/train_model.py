@@ -16,7 +16,6 @@ from sklearn.metrics import classification_report
 import joblib
 
 def train(path_csv="data/features.csv", out_model="models/rf_spoof.pkl"):
-    
     df = pd.read_csv(path_csv)
     if "label" not in df.columns:
         raise ValueError("CSV must contain a 'label' column")

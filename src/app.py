@@ -88,7 +88,6 @@ def get_first_received_ip(msg: email.message.Message) -> Optional[str]:
 def root_redirect():
     return RedirectResponse(url="/docs")
 
-
 @app.post("/detect")
 async def detect_spoofing(file: UploadFile = File(...),
                           sender_ip: Optional[str] = Form(None),

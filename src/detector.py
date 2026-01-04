@@ -7,6 +7,7 @@ from typing import Optional, Dict, Any
 
 class Detector:
     def __init__(self):
+        
         # thresholds / weights for simple scoring
         self.weights = {
             "spf_fail": 2.0,

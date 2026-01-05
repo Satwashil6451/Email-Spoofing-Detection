@@ -8,13 +8,13 @@ from typing import Optional, Dict, Any
 class Detector:
     def __init__(self):
         
-        # thresholds / weights for simple scoring
+        #thresholds / weights for simple scoring
         self.weights = {
             "spf_fail": 2.0,
             "dkim_fail": 3.0,
             "from_returnpath_mismatch": 2.0,
-            "url_mismatch": 1.0,         # per url mismatch
-            "suspicious_keywords": 0.8,  # per keyword
+            "url_mismatch": 1.0,         #per url mismatch
+            "suspicious_keywords": 0.8,  #per keyword
             "attachment": 0.5
         }
         self.threshold = 2.0  # score >= threshold => spoof

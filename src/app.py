@@ -34,6 +34,7 @@ def safe_check_dkim(raw_email: bytes) -> dict:
     try:
         valid = dkim.verify(raw_email)
         return {"status": "pass" if valid else "fail", "detail": None}
+      
     except Exception as e:
         try:
             raw_str = raw_email.decode('utf-8', errors='ignore')

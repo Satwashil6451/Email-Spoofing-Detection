@@ -27,6 +27,7 @@ def _extract_text_and_html(msg):
                 html_parts.append(part.get_payload(decode=True) or "")
     text = "\n".join(filter(None, [str(x) for x in text_parts])).strip()
     html = "\n".join(filter(None, [str(x) for x in html_parts])).strip()
+    
     if not text and html:
         text = BeautifulSoup(html, "html.parser").get_text(separator="\n")
     return text, html

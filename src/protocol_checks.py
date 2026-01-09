@@ -40,6 +40,7 @@ def get_dmarc(domain: str) -> Dict[str, Optional[str]]:
     """
     Query _dmarc.domain TXT record. Returns {'dmarc': txt or None, 'policy': 'none'|'quarantine'|'reject'|None}
     """
+    
     if not domain:
         return {"dmarc": None, "policy": None}
     try:

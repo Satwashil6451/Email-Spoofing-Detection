@@ -89,6 +89,7 @@ class Detector:
 
         # final verdict
         verdict = "spoof" if score >= self.threshold else "legit"
+        
         explanation = {
             "score": score,
             "threshold": self.threshold,

@@ -47,6 +47,7 @@ def safe_check_dkim(raw_email: bytes) -> dict:
 
 
 def safe_check_spf(sender_ip: Optional[str], envelope_from: Optional[str], helo: Optional[str]) -> dict:
+  
     """
     Uses pyspf.check2 if sender_ip and envelope_from provided.
     Returns {'status': 'pass'|'fail'|'softfail'|'neutral'|'none'|'error', 'detail': ...}

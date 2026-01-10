@@ -47,6 +47,7 @@ def get_dmarc(domain: str) -> Dict[str, Optional[str]]:
         answers = dns.resolver.resolve(f"_dmarc.{domain}", "TXT")
         txts = []
         for r in answers:
+            
             # r.strings may be list of bytes or str
             if hasattr(r, "strings"):e
                 joined = b"".join(r.strings).decode(errors="ignore") if isinstance(r.strings[0], (bytes, bytearray)) else "".join(r.strings)

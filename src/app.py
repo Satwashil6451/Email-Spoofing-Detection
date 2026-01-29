@@ -11,7 +11,8 @@ import dns.resolver
 import re
 
 app = FastAPI(title="Email Spoofing Detection API",
-              description="Detects potential spoofed emails using SPF, DKIM, and header checks",
+              description="Detects potential spoofed
+ emails using SPF, DKIM, and header checks",
               version="1.1.0")
 
 
@@ -70,6 +71,7 @@ def safe_check_spf(sender_ip: Optional[str], envelope_from: Optional[str], helo:
 def get_first_received_ip(msg: email.message.Message) -> Optional[str]:
     """
     Tries to parse the first Received header for an IPv4 address.
+
     This is a heuristic to suggest a sender_ip if user didn't provide one.
     """
     received_headers = msg.get_all("Received", [])
@@ -84,8 +86,6 @@ def get_first_received_ip(msg: email.message.Message) -> Optional[str]:
             return m2.group(1)
     return None
 
-
-# ✅ UPDATED ROOT ENDPOINT: Auto-redirect to /docs
 @app.get("/", include_in_schema=False)
 def root_redirect():
     return RedirectResponse(url="/docs")

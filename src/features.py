@@ -17,6 +17,7 @@ def domain_of_url(url: str) -> str:
 def extract_simple_features(parsed_email: Dict[str, Any], protocol_checks: Dict[str, Any]) -> Dict[str, Any]:
     feats = {}
     feats["from_domain"] = parsed_email.get("from_domain", "")
+
     feats["return_path_domain"] = parsed_email.get("return_path_domain", "")
     feats["message_id_domain"] = parsed_email.get("message_id_domain", "")
     feats["num_urls"] = len(parsed_email.get("urls", []))

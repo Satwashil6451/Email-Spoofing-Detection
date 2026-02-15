@@ -56,6 +56,7 @@ def get_dmarc(domain: str) -> Dict[str, Optional[str]]:
         txt = " ".join(txts)
         
         # try to find p=...
+
         policy = None
         if "p=" in txt:
             # simple parse

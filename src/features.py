@@ -13,7 +13,6 @@ def domain_of_url(url: str) -> str:
     try:
         # Parse the URL using urllib
         p = urlparse(url)
-        
         # Extract and return the domain (netloc), convert to lowercase and remove any accidental spaces.
         # Example: https://paypal.com/login → paypal.com
         return p.netloc.lower().strip()

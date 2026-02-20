@@ -50,6 +50,7 @@ def get_dmarc(domain: str) -> Dict[str, Optional[str]]:
             
             if hasattr(r, "strings"):e
                 joined = b"".join(r.strings).decode(errors="ignore") if isinstance(r.strings[0], (bytes, bytearray)) else "".join(r.strings)
+
             else:
                 joined = str(r)
             txts.append(joined)

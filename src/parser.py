@@ -39,6 +39,7 @@ def get_domain_from_email(addr: str) -> str:
     if not addr:
         return ""
     addr = addr.strip()
+    
     # parseaddr gives (name, email)
     _, email_addr = parseaddr(addr)
     parts = email_addr.split("@")

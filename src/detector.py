@@ -36,7 +36,6 @@ class Detector:
             "dmarc": dmarc_res.get("dmarc"),
             "dmarc_policy": dmarc_res.get("policy")
         }
-
         feats = extract_simple_features(parsed, {"dkim_valid": proto["dkim_valid"], "spf_result": proto["spf_result"], "dmarc_policy": proto["dmarc_policy"]})
 
         # scoring

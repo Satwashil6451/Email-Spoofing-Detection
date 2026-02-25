@@ -71,7 +71,6 @@ def safe_check_spf(sender_ip: Optional[str], envelope_from: Optional[str], helo:
 def get_first_received_ip(msg: email.message.Message) -> Optional[str]:
     """
     Tries to parse the first Received header for an IPv4 address.
-
     This is a heuristic to suggest a sender_ip if user didn't provide one.
     """
     received_headers = msg.get_all("Received", [])

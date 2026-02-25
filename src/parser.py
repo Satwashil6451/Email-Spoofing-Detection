@@ -70,7 +70,6 @@ def parse_email(raw_bytes: bytes) -> Dict[str, Any]:
     return_path = headers.get("Return-Path", "")
     message_id = headers.get("Message-ID", "")
     received = [v for k, v in msg.items() if k.lower() == "received"]
-
     text, html = _extract_text_and_html(msg)
     urls = []
     urls.extend(extract_urls(text))

@@ -27,7 +27,6 @@ class Detector:
         dkim_res = check_dkim(raw_bytes)
         spf_res = check_spf(sender_ip, envelope_from, helo)
         dmarc_res = get_dmarc(parsed.get("from_domain") or "")
-
         proto = {
             "dkim_valid": dkim_res.get("dkim_valid"),
             "dkim_error": dkim_res.get("error"),

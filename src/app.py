@@ -160,7 +160,6 @@ async def detect_spoofing(file: UploadFile = File(...),
         if msgid_domain and from_domain and msgid_domain != from_domain:
             score += 0.7
             reasons.append(f"Message-ID domain ({msgid_domain}) differs from From domain ({from_domain}).")
-
         subj = (msg.get("Subject") or "").lower()
       
         if any(k in subj for k in ["urgent", "verify", "update", "password", "confirm"]):

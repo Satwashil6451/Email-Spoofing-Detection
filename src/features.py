@@ -4,6 +4,7 @@ from typing import Dict, Any
 from urllib.parse import urlparse
 
 # List of commonly used phishing-related keywords.
+
 # These words often appear in scam emails trying to create urgency or steal credentials.
 SUSPICIOUS_KEYWORDS = [
     "verify", "account", "password", "urgent", "click", "confirm", "security", "bank", "login", "ssn", "invoice"

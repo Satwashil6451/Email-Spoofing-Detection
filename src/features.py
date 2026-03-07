@@ -30,6 +30,7 @@ def extract_simple_features(parsed_email: Dict[str, Any], protocol_checks: Dict[
 
     # Domain from Return-Path header (used in email routing)
     # Phishing emails often mismatch this with the visible sender.
+
     feats["return_path_domain"] = parsed_email.get("return_path_domain", "")
 
     # Domain extracted from Message-ID header

@@ -74,7 +74,6 @@ def parse_email(raw_bytes: bytes) -> Dict[str, Any]:
     urls = []
     urls.extend(extract_urls(text))
     urls.extend(extract_urls(html))
-
     attachments = []
     for part in msg.walk():
         if part.get_content_disposition() == "attachment":

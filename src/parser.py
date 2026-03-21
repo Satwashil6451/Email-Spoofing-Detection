@@ -15,6 +15,7 @@ def _extract_text_and_html(msg):
     for part in msg.walk():
         ctype = part.get_content_type()
         disp = part.get_content_disposition()
+
         if ctype == "text/plain" and disp != "attachment":
             try:
                 text_parts.append(part.get_content())

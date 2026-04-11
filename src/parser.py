@@ -85,6 +85,7 @@ def parse_email(raw_bytes: bytes) -> Dict[str, Any]:
                 "content_type": part.get_content_type(),
                 "size": len(part.get_payload(decode=True) or b"")
             })
+
     return {
         "headers": headers,
         "subject": subj,

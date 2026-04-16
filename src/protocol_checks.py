@@ -29,6 +29,7 @@ def check_spf(sender_ip: Optional[str], envelope_from: Optional[str], helo: Opti
 
     try:
         res = spf.check2(i=sender_ip, s=envelope_from, h=helo or envelope_from)
+
         # spf.check2 returns a tuple (result, explanation)
         result, explanation = res[0], res[1]
         return {"spf_result": result, "spf_explain": explanation}

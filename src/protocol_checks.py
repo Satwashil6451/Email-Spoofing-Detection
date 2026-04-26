@@ -66,6 +66,7 @@ def get_dmarc(domain: str) -> Dict[str, Optional[str]]:
             for p in parts:
                 if "p=" in p:
                     policy = p.strip().split("=")[1]
+
                     break
         return {"dmarc": txt, "policy": policy}
     except Exception:

@@ -46,6 +46,7 @@ def get_dmarc(domain: str) -> Dict[str, Optional[str]]:
         return {"dmarc": None, "policy": None}
     try:
         answers = dns.resolver.resolve(f"_dmarc.{domain}", "TXT")
+
         txts = []
         for r in answers:
             

@@ -22,6 +22,7 @@ def train(path_csv="data/features.csv", out_model="models/rf_spoof.pkl"):
     df = pd.read_csv(path_csv)
     if "label" not in df.columns:
         raise ValueError("CSV must contain a 'label' column")
+
     X = df.drop(columns=["label"])
     y = (df["label"] == "spoof").astype(int)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
